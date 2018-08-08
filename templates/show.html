@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Great Number Guessing Game!</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = '/style.css') }}">
+<style type="text/css">
+	#container{
+	border: 1px solid black;
+    width: 600px;
+    margin: 10px auto;
+}
+#container h1{
+	text-align: center;
+}
+#container p{
+	text-align: center;
+}
+input{
+	margin-left: 35%;
+}
+#submit{
+	margin: 5px 0 10px 43%;
+}
+#correct{
+/*Starting off with div display = none */
+	/*display: none;*/
+	width: 250px;
+    height: 175px;
+    background-color: ForestGreen;
+    margin-left: 28%;
+    margin-bottom: 20px;
+    color: whitesmoke;
+    padding-top: 1px;
+}
+#high{
+/*Starting off with div display = none */
+	/*display: none;*/
+	width: 250px;
+    height: 175px;
+    background-color: FireBrick;
+    margin-left: 28%;
+    margin-bottom: 20px;
+    color: whitesmoke;
+    padding-top: 1px;
+}
+
+#low{
+/*Starting off with div display = none */
+	/*display: none;*/
+	width: 250px;
+    height: 175px;
+    background-color: FireBrick;
+    margin-left: 28%;
+    margin-bottom: 20px;
+    color: whitesmoke;
+    padding-top: 1px;
+}
+
+#correct button{
+	width: 100px;
+    margin-left: 30%;
+}
+
+
+</style>
+
+</head>
+<body>
+
+	<div id="container">
+		<h1>Welcome to the Great Number Game!</h1>
+		<p>I am thinking of a number between 1 and 100</p>
+
+	<!-- Play again must re-route. Random num - reset -->
+		{% if guess == number %}
+			<div id="correct">
+				<h1>Correct!</h1>
+				<p>Would you like to play again?</p>
+
+				<form action="/newgame" method="get">
+					<button>Play</button>
+				</form>
+			</div>
+		{% endif %}
+
+		<form action="/show" method="post">
+		{% if guess > number %}
+			<div id="high">
+				<h1>Too High!</h1>
+				<p>Guess a lower number</p>
+			</div>
+		<input type="text" name="guess" class="number" placeholder="Guess a Number!" class="hide">
+		<br>
+		<input id="submit" type="submit" name="submit" class="hide">
+		{% endif %}
+
+		{% if guess < number %}		
+			<div id="low">
+				<h1>Too low!</h1>
+				<p>Guess a higher number</p>
+			</div>
+			<input type="text" name="guess" class="number" placeholder="Guess a Number!" class="hide">
+		<br>
+		<input id="submit" type="submit" name="submit" class="hide">
+		{% endif %}
+		</form>
+	</div>
+
+</body>
+</html>

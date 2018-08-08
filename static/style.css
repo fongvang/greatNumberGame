@@ -1,0 +1,57 @@
+
+	#container{
+	border: 1px solid black;
+    width: 600px;
+    margin: 10px auto;
+}
+#container h1{
+	text-align: center;
+}
+#container p{
+	text-align: center;
+}
+input{
+	margin-left: 35%;
+}
+#submit{
+	margin: 5px 0 10px 43%;
+}
+#correct{
+/*Starting off with div display = none */
+	display: none;
+	width: 250px;
+    height: 175px;
+    background-color: ForestGreen;
+    margin-left: 28%;
+    margin-bottom: 20px;
+    color: whitesmoke;
+    padding-top: 1px;
+}
+#high{
+/*Starting off with div display = none */
+	display: none;
+	width: 250px;
+    height: 175px;
+    background-color: FireBrick;
+    margin-left: 28%;
+    margin-bottom: 20px;
+    color: whitesmoke;
+    padding-top: 1px;
+}
+
+#low{
+/*Starting off with div display = none */
+	display: none;
+	width: 250px;
+    height: 175px;
+    background-color: FireBrick;
+    margin-left: 28%;
+    margin-bottom: 20px;
+    color: whitesmoke;
+    padding-top: 1px;
+}
+
+#correct button{
+	width: 100px;
+    margin-left: 30%;
+}
